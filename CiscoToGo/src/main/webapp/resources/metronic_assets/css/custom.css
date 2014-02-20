@@ -1,0 +1,282 @@
+/* here you can put your own css to customize and override the theme */
+/* BEGIN CISCO HEADER FIXES */
+a.mm-link {
+	font-family: arial, helvetica, 'Helvetica Neue', HelveticaNeue, 'Lucida Grande', sans-serif;
+}
+
+#fw-ft-basic {
+	font-family: arial, helvetica, 'Helvetica Neue', HelveticaNeue, 'Lucida Grande', sans-serif;
+}
+
+p.field-button {
+	height: 28px;
+}
+/* END CISCO HEADER FIXES */
+
+.container {
+	width: 100%;
+}
+
+/* BEGIN TOP TILES ROW */
+#contactTileLoadImage {
+	display: none;
+}
+
+.tile {
+  height: 227.25px;
+  width: 227.25px !important;
+}
+
+.tiles .tile:last-child {
+	margin: 0 0 10px 0;
+}
+
+#contactTile div {
+	margin-bottom: 20px;
+}
+
+.planTiles .tile-body {
+	display: none;
+}
+.planTiles .tile-object {
+	display: none;
+}
+/* END TOP TILES ROW */
+
+/* BEGIN BIG BLUE INVOICE TILE */
+#invoiceSummaryTile {
+	height: 290px !important;
+	width: 100% !important;
+}
+
+#invoiceLoadImage {
+	display: none;
+}
+
+#invoiceSummaryTile .row {
+	line-height: 10px;
+}
+
+#invoiceSummaryTile h5 {
+	margin-bottom: 14px;
+}
+
+#invoiceSummaryTile h3 {
+	margin-bottom: 18px;
+}
+
+.invoice-info {
+	margin-bottom: 16px;
+}
+
+.inlineTileDivs{
+	float:left;
+}
+
+.bx-pager-item{
+	display:none;
+}
+
+.tile .tile-body p {
+	font-size: 12px;
+	line-height: 15px;
+}
+
+#buttonLinks {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+#buttonLinks a {
+	margin: 5px 5px 0 0;
+	font-size: 10px;
+	width: 70px;
+	height: 70px;
+	border: 2px solid #ddd;
+	padding: 12px 0px 0px 0px;
+	background-color: #fafafa !important;
+	text-align: center;
+	cursor: pointer;
+}
+
+#buttonLinks a:hover {
+	text-decoration: none !important;
+	border-color: #685D5D !important;
+	color: #444 !important;
+	text-shadow: 0 1px 0px rgba(255, 255, 255, 1) !important;
+	-webkit-transition: all 0.3s ease !important;
+	transition: all 0.3s ease !important;
+}
+
+#buttonLinks i {
+	display: block;
+	color: #646464
+}
+
+#buttonLinks div {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#buttonLinks .disabledLink {
+	pointer-events: none;
+	opacity: .65;
+}
+
+#buttonLinks .selectedLink {
+	border-color: #685D5D !important;
+	color: #444 !important;
+	text-shadow: 0 1px 0px rgba(255, 255, 255, 1) !important;
+}
+
+.wordwrap { 
+   white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+}
+
+.icon-btn div {
+	font-weight: normal;
+}
+/* END BIG BLUE INVOICE TILE */
+
+/* BEGIN SUBMIT DISPUTE FORM */
+#submitDisputePopup .modal-title {
+	margin: 0;
+	line-height: 1.428571429;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300 !important;
+	background-color: white;
+}
+
+#submitDisputePopup .modal-body {
+	max-height: 450px;
+}
+
+#submitDisputeButton {
+	margin-left: 5px;
+}
+
+#submitDisputeLoadImage {
+	height: 33px;
+	width: 33px;
+	display: none;
+}
+
+#disputeResponsePopup .modal-title {
+	margin: 0;
+	line-height: 1.428571429;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300 !important;
+	background-color: white;
+}
+
+#disputeResponsePopup .modal-body {
+	max-height: 450px;
+}
+
+#disputeResponsePopup .modal-dialog {
+	width: 400px;
+}
+/* END SUBMIT DISPUTE FORM */
+
+/* BEGIN SERVICE LEVEL TABLE */
+#serviceInvoiceTable .prev a, #serviceInvoiceTable .next a {
+	height: 32px;
+}
+
+.details table {
+	width: 100%;
+}
+
+/* END SERVICE LEVEL TABLE */
+
+/* hide certain elements initially */
+#planInvoiceTable, #serviceInvoiceTable, #billingHistoryTable, #usageHistoryChart, #contactTile, #invoiceSummaryTile, .title-section {
+  display: none;
+}
+
+#contactTileLoadImage{
+	position: absolute;
+    top: 50%;
+    left: 70%;
+    margin: -10% 0 0 -32%;
+}
+
+#invoiceLoadImage{
+	position: absolute;
+ 	top: 58%;
+    left: 72%;
+    margin: -5% 0 0 -25%;
+}
+
+.tileContainer {
+    position: relative;
+}
+.tileContainer {
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+.tileCard {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: all 0.5s linear;
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+}
+.tileContainer.active .tileCard {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.frontFlip{
+	position:absolute;
+}
+.faceFlip {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.backFlip {
+	position:relative;
+    display: block;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.infoFlip{
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin-right:7px;
+	margin-bottom:7px;
+}
+.closeFlip{
+	 position:absolute; 
+	 top:0; 
+	 right:0;
+}
+.clickFlip{
+	color:#000;
+}
+
+.clickFlip:hover{
+	color:#ffffff;
+	cursor:pointer;
+}
+
+.tile .tile-body > i{
+	margin:0 auto;	
+	padding-top: 40px; 
+	font-size: 100px;
+}
+
+.tile .tile-object > .name{
+	font-size:16px;
+}
+
+.tileContainer .tile .tile-body p{
+	padding-bottom:7px;
+}

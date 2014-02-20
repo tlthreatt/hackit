@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" default-lazy-init="true" >
+
+   	<context:component-scan base-package="com.cisco.fcm.mvc.controller" />
+   	<context:component-scan base-package="com.cisco.fcm.service" />
+			
+	<!--  Enabled for development no caching for the web server -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/resources/**" />
+			<bean id="noCacheWebContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+				<property name="cacheSeconds" value="900" />
+				<property name="useExpiresHeader" value="true" />
+				<property name="useCacheControlHeader" value="true" />
+				<property name="useCacheControlNoStore" value="true" />
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<bean id="myAcccountInquiryService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">  
+	    <property name="serviceInterface" value="com.webex.iservices.accountinquiry.ws.AccountInqService"/>  
+	    <property name="wsdlDocumentUrl" value="http://iservicesint2.corp.webex.com:80/AccountInqWeb/AccountInquiryService?wsdl"/>  
+	    <property name="namespaceUri" value="http://ws.accountinquiry.iservices.webex.com/"/>  
+	    <property name="serviceName" value="AccountInquiryService"/>  
+	    <property name="portName" value="AccountInquiryPort"/>
+	    <property name="lookupServiceOnStartup" value="false" /> 
+	    <property name="username" value="ip_user" /> 
+		<property name="password" value="user4*ip864" />
+	</bean>
+	<bean id="myPaymentInquiryService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">  
+	    <property name="serviceInterface" value="com.cisco.fcm.client.PaymentInquiryWS"/>  
+	    <property name="wsdlDocumentUrl" value="http://iservicesint2.corp.webex.com/PaymentInquiryWeb/PaymentInquiryWSService?wsdl"/>  
+	    <property name="namespaceUri" value="http://ws.paymentinquiry.iservices.webex.com/"/>  
+	    <property name="serviceName" value="PaymentInquiryWSService"/>  
+	    <property name="portName" value="PaymentInquiryWSPort"/>
+	    <property name="lookupServiceOnStartup" value="false" /> 
+	    <property name="username" value="ip_user" /> 
+		<property name="password" value="user4*ip864" />
+	</bean>
+	<bean id="myNotificationService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">
+	    <property name="serviceInterface" value="org.openuri.NotificationWS"/>  
+	    <property name="wsdlDocumentUrl" value="http://iservicesuat.corp.webex.com/NotificationWeb/com/webex/integratedservices/notification/services/NotificationWS.jws?wsdl"/>  
+	    <property name="namespaceUri" value="http://www.openuri.org/"/>  
+	    <property name="serviceName" value="NotificationWS"/>  
+	    <property name="portName" value="NotificationWSSoapPort"/>
+	    <property name="lookupServiceOnStartup" value="false" /> 
+	</bean>
+	<bean id="myRemedyService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">
+	    <property name="serviceInterface" value="com.oracle.xmlns.casemgmtsoaapp.remedyticketmgmtsoaproject.remedyticketmgmtmediator.ExecutePtt"/>  
+	    <property name="wsdlDocumentUrl" value="http://soaint2.corp.webex.com:80/soa-infra/services/default/RemedyTicketMgmtSOAProject/RemedyTicketMgmtMediator_ep?wsdl"/>  
+	    <property name="namespaceUri" value="http://xmlns.oracle.com/CaseMgmtSOAApp/RemedyTicketMgmtSOAProject/RemedyTicketMgmtMediator"/>  
+	    <property name="serviceName" value="RemedyTicketMgmtMediator_ep"/>  
+	    <property name="portName" value="execute_pt"/>
+	    <property name="lookupServiceOnStartup" value="false" /> 
+	    <property name="username" value="weblogic" /> 
+		<property name="password" value="webex123" />
+	</bean>
+	
+	<bean id="FCMiservicesConsumerServiceImpl" class="com.cisco.fcm.service.FCMServiceImpl" lazy-init="true">
+	</bean>
+	
+	<!-- Resolves views selected for rendering by @Controllers to resources in the /WEB-INF/views directory -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+<!-- 		<property name="suffix" value=".jsp" /> -->
+	</bean>
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+	
+    <!-- Used for JSR bean validation -->
+<!--     <mvc:annotation-driven validator="validator"/> -->
+<!--     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/> -->
+</beans>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/spring/applicationContext.xml
+		</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>partnerPortalReports</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/applicationContext.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>customerPortal</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>partnerPortalReports</servlet-name>
+		<url-pattern>/partnerportal/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>customerPortal</servlet-name>
+		<url-pattern>/customerportal/*</url-pattern>
+	</servlet-mapping>
+
+<!-- 	<servlet-mapping> -->
+<!-- 	    <servlet-name>default</servlet-name> -->
+<!-- 	    <url-pattern>*.css</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+<!-- 	<servlet-mapping> -->
+<!-- 	    <servlet-name>default</servlet-name> -->
+<!-- 	    <url-pattern>*.js</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+<!-- 	<servlet-mapping> -->
+<!-- 	    <servlet-name>default</servlet-name> -->
+<!-- 	    <url-pattern>*.jpg</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+<!-- 	<servlet-mapping> -->
+<!-- 	    <servlet-name>default</servlet-name> -->
+<!-- 	    <url-pattern>*.png</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+	
+<!-- type mapping for the static files -->
+	<mime-mapping>
+	   <extension>js</extension>
+	   <mime-type>application/javascript</mime-type>
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>css</extension>
+		<mime-type>text/css</mime-type>
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>json</extension>
+		<mime-type>application/json</mime-type>
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>png</extension>
+		<mime-type>image/png</mime-type>
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>jpg</extension>
+		<mime-type>image/png</mime-type>
+	</mime-mapping>
+</web-app>

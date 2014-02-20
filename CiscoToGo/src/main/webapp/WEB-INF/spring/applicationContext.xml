@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" default-lazy-init="true" >
+
+   	<context:component-scan base-package="com.cisco.partnerportal.mvc.controller" />
+	<context:component-scan base-package="com.cisco.partnerportal.service" />
+			
+	<!--  Enabled for development no caching for the web server -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/resources/**" />
+			<bean id="noCacheWebContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+				<property name="cacheSeconds" value="900" />
+				<property name="useExpiresHeader" value="true" />
+				<property name="useCacheControlHeader" value="true" />
+				<property name="useCacheControlNoStore" value="true" />
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<bean id="TypesSOAConsumerServiceImpl" class="com.cisco.partnerportal.service.PartnerReportingServiceTypesImpl" lazy-init="true">
+	</bean>
+	
+	<bean id="JschFileDownloadServiceImpl" class="com.cisco.partnerportal.service.DownloadFileServiceJschImpl" lazy-init="true">
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations">
+	        <value>WEB-INF/conf/PartnerPortal_${env}.properties</value>
+	    </property>
+	</bean>
+
+<!-- 	<bean id="myFilter" class="com.cisco.partnerportal.security.HeaderAuthenticationFilter"> -->
+<!-- 	</bean> -->
+
+	<bean id="myWebService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">  
+	    <property name="serviceInterface" value="com.oracle.xmlns.reportsoaapp.reportsoaproject.searchreportsnapshot.ExecutePtt"/>  
+	    <property name="wsdlDocumentUrl" value="${wsdlUrl}"/>  
+	    <property name="namespaceUri" value="http://xmlns.oracle.com/ReportSOAApp/ReportSOAProject/searchReportSnapshot"/>  
+	    <property name="serviceName" value="searchReportSnapshot_ep"/>  
+	    <property name="portName" value="execute_pt"/>
+<!-- 	    <property name="endpointAddress" value="${wsdlUrl}" /> -->
+	    <property name="lookupServiceOnStartup" value="false" /> 
+	    <property name="username" value="${SOAUsername}" /> 
+		<property name="password" value="${SOAPassword}" />
+	</bean>
+	
+		<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+	
+    <!-- Used for JSR bean validation -->
+<!--     <mvc:annotation-driven validator="validator"/> -->
+<!--     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/> -->
+</beans>

@@ -1,0 +1,37 @@
+<billingHistoryResponse>
+	<accountNumber>20651354</accountNumber>
+	<billingDetails>
+		<billDate>2/1/2014</billDate>
+		<billNumber>10099950018</billNumber>
+		<servicePeriod>
+			<serviceFrom>1/1/2014</serviceFrom>
+			<serviceTo>2/1/2014</serviceTo>
+			<skuDetails>
+				<skuItem>
+					<skuId>CTS 1000</skuId>
+					<skuDesc>CTS 1000 TPaaS Unit</skuDesc>
+					<qty>13</qty>
+					<billAmt>59,742.54</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3000</skuId>
+					<skuDesc>CTS 3000 TPaaS Unit</skuDesc>
+					<qty>13</qty>
+					<billAmt>129,438.79</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3200</skuId>
+					<skuDesc>CTS 3200 TPaaS Unit</skuDesc>
+					<qty>13</qty>
+					<billAmt>156,167.44</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>TP_MOVE</skuId>
+					<skuDesc>TPaaS Move Fee</skuDesc>
+					<qty>12</qty>
+					<billAmt>20,714.45</billAmt>
+				</skuItem>
+			</skuDetails>
+		</servicePeriod>
+	</billingDetails>
+</billingHistoryResponse>

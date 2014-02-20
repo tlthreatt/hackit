@@ -1,0 +1,105 @@
+<billingHistoryResponse>
+	<accountNumber>20651351</accountNumber>
+	<billingDetails>
+		<billDate>2/1/2014</billDate>
+		<billNumber>Draft</billNumber>
+		<servicePeriod>
+			<serviceFrom>1/1/2014</serviceFrom>
+			<serviceTo>2/1/2014</serviceTo>
+			<skuDetails>
+				<skuItem>
+					<skuId>CTS 1000</skuId>
+					<skuDesc>CTS 1000 TPaaS Unit</skuDesc>
+					<qty>12</qty>
+					<billAmt>64,338.12</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3000</skuId>
+					<skuDesc>CTS 3000 TPaaS Unit</skuDesc>
+					<qty>17</qty>
+					<billAmt>149,352.45</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3200</skuId>
+					<skuDesc>CTS 3200 TPaaS Unit</skuDesc>
+					<qty>7</qty>
+					<billAmt>180,193.20</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>TP_MOVE</skuId>
+					<skuDesc>TPaaS Move Fee</skuDesc>
+					<qty>22</qty>
+					<billAmt>20,714.45</billAmt>
+				</skuItem>
+			</skuDetails>
+		</servicePeriod>
+	</billingDetails>
+	<billingDetails>
+		<billDate>3/1/2014</billDate>
+		<billNumber>Draft</billNumber>
+		<servicePeriod>
+			<serviceFrom>2/1/2014</serviceFrom>
+			<serviceTo>3/1/2014</serviceTo>
+			<skuDetails>
+				<skuItem>
+					<skuId>CTS 1000</skuId>
+					<skuDesc>CTS 1000 TPaaS Unit</skuDesc>
+					<qty>23</qty>
+					<billAmt>45,338.12</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3000</skuId>
+					<skuDesc>CTS 3000 TPaaS Unit</skuDesc>
+					<qty>14</qty>
+					<billAmt>176,352.45</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3200</skuId>
+					<skuDesc>CTS 3200 TPaaS Unit</skuDesc>
+					<qty>12</qty>
+					<billAmt>147,193.20</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>TP_MOVE</skuId>
+					<skuDesc>TPaaS Move Fee</skuDesc>
+					<qty>8</qty>
+					<billAmt>24,714.45</billAmt>
+				</skuItem>
+			</skuDetails>
+		</servicePeriod>
+	</billingDetails>
+	<billingDetails>
+		<billDate>4/1/2014</billDate>
+		<billNumber>Draft</billNumber>
+		<servicePeriod>
+			<serviceFrom>3/1/2014</serviceFrom>
+			<serviceTo>4/1/2014</serviceTo>
+			<skuDetails>
+				<skuItem>
+					<skuId>CTS 1000</skuId>
+					<skuDesc>CTS 1000 TPaaS Unit</skuDesc>
+					<qty>18</qty>
+					<billAmt>45,338.12</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3000</skuId>
+					<skuDesc>CTS 3000 TPaaS Unit</skuDesc>
+					<qty>13</qty>
+					<billAmt>176,352.45</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>CTS 3200</skuId>
+					<skuDesc>CTS 3200 TPaaS Unit</skuDesc>
+					<qty>16</qty>
+					<billAmt>147,193.20</billAmt>
+				</skuItem>
+				<skuItem>
+					<skuId>TP_MOVE</skuId>
+					<skuDesc>TPaaS Move Fee</skuDesc>
+					<qty>5</qty>
+					<billAmt>24,714.45</billAmt>
+				</skuItem>
+			</skuDetails>
+		</servicePeriod>
+	</billingDetails>
+</billingHistoryResponse>

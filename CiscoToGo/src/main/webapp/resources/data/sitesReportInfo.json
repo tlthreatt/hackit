@@ -1,0 +1,108 @@
+[
+	{
+		"reportName": "Registered Hosts",
+		"reports": [{
+			"fullPath" : "somefolder/somefile.csv",
+			"startDate" : "01/02/2013",
+			"endDate" :   "02/02/2013"
+		}]
+	},
+	{
+		"reportName" : "Active Host Summary",
+		"reports" : [{
+			"fullPath" : "somefolder3/somefile2.csv",
+			"startDate" : "03/02/2013",
+			"endDate" :   "04/02/2013"
+		},
+		{
+			"fullPath" : "somefolder4/somefile4.csv",
+			"startDate": "05/02/2013",
+			"endDate":   "06/02/2013"
+		},
+		{
+			"fullPath" : "somefolder5/somefile5.csv",
+			"startDate" : "07/02/2013",
+			"endDate" :   "08/02/2013"
+		}]
+	},
+	{
+		"reportName" : "Blis Meeting Report",
+		"reports" : [{
+			"fullPath" : "somefolder3/somefile2.csv",
+			"startDate" : "03/02/2013",
+			"endDate" :   "04/02/2013"
+		},
+		{
+			"fullPath" : "somefolder4/somefile4.csv",
+			"startDate": "05/02/2013",
+			"endDate":   "06/02/2013"
+		},
+		{
+			"fullPath" : "somefolder5/somefile5.csv",
+			"startDate" : "07/02/2013",
+			"endDate" :   "08/02/2013"
+		}]
+	},
+	{
+		"reportName" : "Attendee Report",
+		"reports" : [{
+			"fullPath" : "somefolder3/somefile2.csv",
+			"startDate" : "03/02/2013",
+			"endDate" :   "04/02/2013"
+		},
+		{
+			"fullPath" : "somefolder4/somefile4.csv",
+			"startDate": "05/02/2013",
+			"endDate":   "06/02/2013"
+		},
+		{
+			"fullPath" : "somefolder5/somefile5.csv",
+			"startDate" : "07/02/2013",
+			"endDate" :   "08/02/2013"
+		}]
+	},
+	{
+		"reportName": "Registered Hosts",
+		"reports": [{
+			"fullPath" : "somefolder/somefile.csv",
+			"startDate" : "01/02/2013",
+			"endDate" :   "02/02/2013"
+		}]
+	},
+	{
+		"reportName" : "Active Host Summary",
+		"reports" : [{
+			"fullPath" : "somefolder3/somefile2.csv",
+			"startDate" : "03/02/2013",
+			"endDate" :   "04/02/2013"
+		},
+		{
+			"fullPath" : "somefolder4/somefile4.csv",
+			"startDate": "05/02/2013",
+			"endDate":   "06/02/2013"
+		},
+		{
+			"fullPath" : "somefolder5/somefile5.csv",
+			"startDate" : "07/02/2013",
+			"endDate" :   "08/02/2013"
+		}]
+	},
+	{
+		"reportName" : "Blis Meeting Report",
+		"reports" : [{
+			"fullPath" : "somefolder3/somefile2.csv",
+			"startDate" : "03/02/2013",
+			"endDate" :   "04/02/2013"
+		},
+		{
+			"fullPath" : "somefolder4/somefile4.csv",
+			"startDate": "05/02/2013",
+			"endDate":   "06/02/2013"
+		},
+		{
+			"fullPath" : "somefolder5/somefile5.csv",
+			"startDate" : "07/02/2013",
+			"endDate" :   "08/02/2013"
+		}]
+	}
+]
